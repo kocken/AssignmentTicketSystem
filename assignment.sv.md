@@ -121,7 +121,7 @@ Om man gör VG delar skall det på något sätt vara enkelt att se vilka, ett f�
 
 
 
-# Betygskrav om man är ensam
+# Betygskrav om man inte är i en grupp
 
 ## Absolut Minimum
 * Tre webbsites gjort i ASP.NET Core 2 (i denna prio-ordning)
@@ -137,7 +137,7 @@ Om man gör VG delar skall det på något sätt vara enkelt att se vilka, ett f�
 * Enstak validering av input i Backoffice
 * Få till att enstaka tekster i Backoffice är tillgänglige på båda svenska och engelska via ressource filer, så att när man bytter språk i webbläseren ändras teksten i Backoffice
 
-## VG (G + minst 3 för VG)
+## VG (G + minst 2 för VG)
 Om man gör VG delar skall det på något sätt vara enkelt att se vilka, ett förslag är att skriva det i *index.md*
 
 * Båda Backoffice och TicketShop måste vara tillgängligt på svenska och engelska
