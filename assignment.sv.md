@@ -118,3 +118,37 @@ Om man gör VG delar skall det på något sätt vara enkelt att se vilka, ett f�
 * Köpt biljett sickas till kunderna med email
 * Multi använder backoffice med inloggning som bygger på [ASP.NET security](https://docs.microsoft.com/en-us/aspnet/core/security/)
 * Asynkron del, implementerad  med React och SignalR (se lektion nr. 12)
+
+
+
+# Betygskrav om man är ensam
+
+## Absolut Minimum
+* Tre webbsites gjort i ASP.NET Core 2 (i denna prio-ordning)
+
+    1. Ett REST API, som hämtar och uppdatera ett simpelt objekt, te.x. en venue
+    2. Ett administrativt gränssnitt (Backoffice), en sida vart man kan skåpa t.ex. en ny venue via REST APIen
+    3. Ett använder gränssnitt (TicketShop), en sida som visar t.ex. alla venues, hämntat från REST APIen
+
+* Dokumentationen måsta stämma med implementationen
+
+## G (Absolut minimum + minst 2 för G)
+* Få till loggning med .NET Core logging och SEQ
+* Enstak validering av input i Backoffice
+* Få till att enstaka tekster i Backoffice är tillgänglige på båda svenska och engelska via ressource filer, så att när man bytter språk i webbläseren ändras teksten i Backoffice
+
+## VG (G + minst 3 för VG)
+Om man gör VG delar skall det på något sätt vara enkelt att se vilka, ett förslag är att skriva det i *index.md*
+
+* Båda Backoffice och TicketShop måste vara tillgängligt på svenska och engelska
+* Input validering på all input, i Backoffice
+* Det ska var möjligt att skåpa ett produkt i Backoffice och konsumera (köpa) det i TicketShop
+* Cake build script (kan med fördel konfigureras som det första)
+* AppVoyage (kan med fördel konfigureras efter cake scriptet så att ni kan få in status på github)
+* Deployat till Azure och demo körs därifrån
+* Regex används till inputvalidering  dom ställen vart det gir mening
+* Loggning i Azure
+* Enhetstestar
+* Köpt biljett sickas till kunderna med email
+* Multi använder backoffice med inloggning som bygger på [ASP.NET security](https://docs.microsoft.com/en-us/aspnet/core/security/)
+* Asynkron del, implementerad  med React och SignalR (se lektion nr. 12)
