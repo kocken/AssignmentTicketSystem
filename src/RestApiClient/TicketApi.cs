@@ -14,36 +14,36 @@ namespace TicketSystem.RestApiClient
 
         private string apiLink = "http://localhost:59914/api/";
 
-        public List<Ticket> TicketGet()
-        {
-            var client = new RestClient(apiLink);
-            var request = new RestRequest("ticket", Method.GET);
-            var response = client.Execute<List<Ticket>>(request);
-            return response.Data;
-        }
+        //public List<Ticket> TicketGet()
+        //{
+        //    var client = new RestClient(apiLink);
+        //    var request = new RestRequest("ticket", Method.GET);
+        //    var response = client.Execute<List<Ticket>>(request);
+        //    return response.Data;
+        //}
 
-        public Ticket TicketTicketIdGet(int ticketId)
-        {
-            var client = new RestClient(apiLink);
-            var request = new RestRequest("ticket/{id}", Method.GET);
-            request.AddUrlSegment("id", ticketId);
-            var response = client.Execute<Ticket>(request);
+        //public Ticket TicketTicketIdGet(int ticketId)
+        //{
+        //    var client = new RestClient(apiLink);
+        //    var request = new RestRequest("ticket/{id}", Method.GET);
+        //    request.AddUrlSegment("id", ticketId);
+        //    var response = client.Execute<Ticket>(request);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-            {
-                throw new KeyNotFoundException(string.Format("Ticket with ID: {0} is not found", ticketId));
-            }
+        //    if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        //    {
+        //        throw new KeyNotFoundException(string.Format("Ticket with ID: {0} is not found", ticketId));
+        //    }
 
-            return response.Data;
-        }
+        //    return response.Data;
+        //}
 
-        public List<TicketEvent> EventGet()
-        {
-            var client = new RestClient(apiLink);
-            var request = new RestRequest("event", Method.GET);
-            var response = client.Execute<List<TicketEvent>>(request);
-            return response.Data;
-        }
+        //public List<TicketEvent> EventGet()
+        //{
+        //    var client = new RestClient(apiLink);
+        //    var request = new RestRequest("event", Method.GET);
+        //    var response = client.Execute<List<TicketEvent>>(request);
+        //    return response.Data;
+        //}
 
         public List<Venue> VenueGet()
         {
