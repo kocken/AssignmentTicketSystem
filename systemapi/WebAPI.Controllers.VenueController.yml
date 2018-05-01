@@ -35,7 +35,9 @@ items:
       <Route("api/[controller]")>
 
       Public Class VenueController
+
           Inherits Controller
+
           Implements IActionFilter, IAsyncActionFilter, IFilterMetadata, IDisposable
   inheritance:
   - System.Object
