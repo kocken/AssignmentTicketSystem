@@ -10,42 +10,116 @@
     "https"
   ],
   "paths": {
-    "/ticket": {
+    "/venue": {
       "get": {
-	      "operationId": "ticket",
-        "summary": "Something",
+        "summary": "Grabs all venues",
+		"description": "Grabs all venues",
+		"operationId": "venue",
+		"produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
-            "description": "Ticket loaded"
+            "description": "Venues loaded"
           }
         }
       }
     },
-    "/ticket/{ticketId}": {
-      "get": {
-        "summary": "Get a ticket by ID from the system",
-        "description": "Returns a single ticket",
-	    	"operationId": "ticketId",
-        "produces": [
-          "application/pdf",
-          "text/html",
-          "application/json"
-        ],
+   "/venue/{venue}": {
+      "post": {
+        "summary": "Adds a venue to the system",
+        "description": "Adds a venue to the system",
+	    "operationId": "venue",
         "parameters": [
           {
-            "name": "ticketId",
+            "name": "venue",
             "in": "path",
-            "description": "ID of the ticket",
+            "description": "Venue to add",
+            "required": true,
+            "type": "Venue"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Venue added"
+          }
+        }
+      }
+    },
+   "/venue/{id}": {
+      "delete": {
+        "summary": "Deletes a venue from the system",
+        "description": "Deletes a venue from the system",
+	    "operationId": "id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Venue id to delete",
             "required": true,
             "type": "integer"
           }
         ],
         "responses": {
           "200": {
-            "description": "Ticket loaded"
-          },
-          "404": {
-            "description": "Ticket not found"
+            "description": "Venue deleted"
+          }
+        }
+      }
+    }, 
+   "/event": {
+      "get": {
+        "summary": "Grabs all ticket events",
+		"description": "Grabs all ticket events",
+		"operationId": "event",
+		"produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Events loaded"
+          }
+        }
+      }
+    },
+   "/event/{event}": {
+      "post": {
+        "summary": "Adds a event to the system",
+        "description": "Adds a event to the system",
+	    "operationId": "event",
+        "parameters": [
+          {
+            "name": "event",
+            "in": "path",
+            "description": "Event to add",
+            "required": true,
+            "type": "Event"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event added"
+          }
+        }
+      }
+    },
+   "/event/{id}": {
+      "delete": {
+        "summary": "Deletes a event from the system",
+        "description": "Deletes a event from the system",
+	    "operationId": "id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Event id to delete",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event deleted"
           }
         }
       }
