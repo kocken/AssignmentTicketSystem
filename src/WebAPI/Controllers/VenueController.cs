@@ -14,21 +14,21 @@ namespace WebAPI.Controllers
     {
         TicketDatabase db = new TicketDatabase();
 
-        // GET api/values
+        // GET api/venue
         [HttpGet]
         public IEnumerable<Venue> Get()
         {
             return db.VenuesGet();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        // GET api/venue/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST api/values
+        // POST api/venue
         [HttpPost]
         public void Post([FromBody]Venue venue)
         {
@@ -38,16 +38,17 @@ namespace WebAPI.Controllers
             }
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        // PUT api/venue/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
-        // DELETE api/values/5
+        // DELETE api/venue/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            db.VenueDelete(id);
         }
     }
 }

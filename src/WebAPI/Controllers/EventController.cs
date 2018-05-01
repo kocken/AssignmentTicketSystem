@@ -14,34 +14,37 @@ namespace WebAPI.Controllers
     {
         TicketDatabase db = new TicketDatabase();
 
-        // GET api/values
+        // GET api/event
         [HttpGet]
         public IEnumerable<TicketEvent> Get()
         {
             return db.EventsGet();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        // GET api/event/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST api/values
+        // POST api/event
         [HttpPost]
         public void Post([FromBody]string name, string description)
         {
-            db.EventAdd(name, description);
+            if (ModelState.IsValid)
+            {
+                db.EventAdd(name, description);
+            }
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        // PUT api/event/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
-        // DELETE api/values/5
+        // DELETE api/event/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
