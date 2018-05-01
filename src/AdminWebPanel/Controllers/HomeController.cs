@@ -7,12 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using AdminWebPanel.Models;
 using TicketSystem.RestApiClient;
 using TicketSystem.DatabaseRepository.Model;
+using Microsoft.Extensions.Logging;
 
 namespace AdminWebPanel.Controllers
 {
     public class HomeController : Controller
     {   
         private TicketApi api = new TicketApi();
+
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
         public IActionResult Index()
         {
@@ -23,7 +31,16 @@ namespace AdminWebPanel.Controllers
         {
             if (ModelState.IsValid)
             {
-                TempData["notice"] = ModelState.IsValid && api.VenueAdd(venue) ? "Venue was successfully added" : "Venue failed to get added";
+                if (api.VenueAdd(venue))
+                {
+                    TempData["notice"] = "Venue was successfully added";
+                    _logger.LogInformation("Venue {@Venue} was successfully added", venue);
+                }
+                else
+                {
+                    TempData["notice"] = "Venue was valid but failed to get added";
+                    _logger.LogError("Venue {@Venue} was valid but failed to get added", venue);
+                }
             }
             else
             {
