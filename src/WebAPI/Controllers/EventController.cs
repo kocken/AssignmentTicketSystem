@@ -10,15 +10,15 @@ namespace WebAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class VenueController : Controller
+    public class EventController : Controller
     {
         TicketDatabase db = new TicketDatabase();
 
         // GET api/values
         [HttpGet]
-        public IEnumerable<Venue> Get()
+        public IEnumerable<TicketEvent> Get()
         {
-            return db.VenuesGet();
+            return db.EventsGet();
         }
 
         // GET api/values/5
@@ -30,9 +30,9 @@ namespace WebAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string name, string address, string city, string country)
+        public void Post([FromBody]string name, string description)
         {
-            db.VenueAdd(name, address, city, country);
+            db.EventAdd(name, description);
         }
 
         // PUT api/values/5
@@ -45,6 +45,7 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            db.EventDelete(id);
         }
     }
 }
