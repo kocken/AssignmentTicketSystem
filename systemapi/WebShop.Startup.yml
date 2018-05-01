@@ -1,31 +1,31 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent
-  commentId: T:TicketSystem.DatabaseRepository.Model.TicketEvent
-  id: TicketEvent
-  parent: TicketSystem.DatabaseRepository.Model
+- uid: WebShop.Startup
+  commentId: T:WebShop.Startup
+  id: Startup
+  parent: WebShop
   children:
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  - TicketSystem.DatabaseRepository.Model.TicketEvent.ToString
+  - WebShop.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  - WebShop.Startup.Configuration
+  - WebShop.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  - WebShop.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   langs:
   - csharp
   - vb
-  name: TicketEvent
-  nameWithType: TicketEvent
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent
+  name: Startup
+  nameWithType: Startup
+  fullName: WebShop.Startup
   type: Class
   source:
-    id: TicketEvent
-    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\TicketEvent.cs
-    startLine: 4
+    id: Startup
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\WebShop\Startup.cs
+    startLine: 11
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - WebShop
+  namespace: WebShop
   syntax:
-    content: public class TicketEvent
-    content.vb: Public Class TicketEvent
+    content: public class Startup
+    content.vb: Public Class Startup
   inheritance:
   - System.Object
   inheritedMembers:
@@ -35,163 +35,140 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  id: TicketEventId
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
+- uid: WebShop.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:WebShop.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
+  parent: WebShop.Startup
   langs:
   - csharp
   - vb
-  name: TicketEventId
-  nameWithType: TicketEvent.TicketEventId
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
+  name: Startup(IConfiguration)
+  nameWithType: Startup.Startup(IConfiguration)
+  fullName: WebShop.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
+  type: Constructor
+  source:
+    id: .ctor
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\WebShop\Startup.cs
+    startLine: 13
+  assemblies:
+  - WebShop
+  namespace: WebShop
+  syntax:
+    content: public Startup(IConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Public Sub New(configuration As IConfiguration)
+  overload: WebShop.Startup.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: WebShop.Startup.Configuration
+  commentId: P:WebShop.Startup.Configuration
+  id: Configuration
+  parent: WebShop.Startup
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: Startup.Configuration
+  fullName: WebShop.Startup.Configuration
   type: Property
   source:
-    id: TicketEventId
-    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\TicketEvent.cs
-    startLine: 6
+    id: Configuration
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\WebShop\Startup.cs
+    startLine: 18
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - WebShop
+  namespace: WebShop
   syntax:
-    content: public int TicketEventId { get; set; }
+    content: public IConfiguration Configuration { get; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property TicketEventId As Integer
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId*
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Public ReadOnly Property Configuration As IConfiguration
+  overload: WebShop.Startup.Configuration*
   modifiers.csharp:
   - public
   - get
-  - set
   modifiers.vb:
   - Public
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  id: EventName
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
+  - ReadOnly
+- uid: WebShop.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:WebShop.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  parent: WebShop.Startup
   langs:
   - csharp
   - vb
-  name: EventName
-  nameWithType: TicketEvent.EventName
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  type: Property
-  source:
-    id: EventName
-    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\TicketEvent.cs
-    startLine: 8
-  assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
-  syntax:
-    content: >-
-      [Required]
-
-      public string EventName { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: >-
-      <Required>
-
-      Public Property EventName As String
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName*
-  attributes:
-  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
-    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
-    arguments: []
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  commentId: P:TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  id: EventHtmlDescription
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
-  langs:
-  - csharp
-  - vb
-  name: EventHtmlDescription
-  nameWithType: TicketEvent.EventHtmlDescription
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  type: Property
-  source:
-    id: EventHtmlDescription
-    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\TicketEvent.cs
-    startLine: 11
-  assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
-  syntax:
-    content: >-
-      [Required]
-
-      public string EventHtmlDescription { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: >-
-      <Required>
-
-      Public Property EventHtmlDescription As String
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription*
-  attributes:
-  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
-    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
-    arguments: []
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.ToString
-  commentId: M:TicketSystem.DatabaseRepository.Model.TicketEvent.ToString
-  id: ToString
-  parent: TicketSystem.DatabaseRepository.Model.TicketEvent
-  langs:
-  - csharp
-  - vb
-  name: ToString()
-  nameWithType: TicketEvent.ToString()
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.ToString()
+  name: ConfigureServices(IServiceCollection)
+  nameWithType: Startup.ConfigureServices(IServiceCollection)
+  fullName: WebShop.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   type: Method
   source:
-    id: ToString
-    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\TicketEvent.cs
-    startLine: 14
+    id: ConfigureServices
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\WebShop\Startup.cs
+    startLine: 21
   assemblies:
-  - DatabaseRepository
-  namespace: TicketSystem.DatabaseRepository.Model
+  - WebShop
+  namespace: WebShop
   syntax:
-    content: public override string ToString()
-    return:
-      type: System.String
-    content.vb: Public Overrides Function ToString As String
-  overridden: System.Object.ToString
-  overload: TicketSystem.DatabaseRepository.Model.TicketEvent.ToString*
+    content: public void ConfigureServices(IServiceCollection services)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Sub ConfigureServices(services As IServiceCollection)
+  overload: WebShop.Startup.ConfigureServices*
   modifiers.csharp:
   - public
-  - override
   modifiers.vb:
   - Public
-  - Overrides
+- uid: WebShop.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  commentId: M:WebShop.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  id: Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  parent: WebShop.Startup
+  langs:
+  - csharp
+  - vb
+  name: Configure(IApplicationBuilder, IHostingEnvironment)
+  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
+  fullName: WebShop.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
+  type: Method
+  source:
+    id: Configure
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\WebShop\Startup.cs
+    startLine: 27
+  assemblies:
+  - WebShop
+  namespace: WebShop
+  syntax:
+    content: public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    parameters:
+    - id: app
+      type: Microsoft.AspNetCore.Builder.IApplicationBuilder
+    - id: env
+      type: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+    content.vb: Public Sub Configure(app As IApplicationBuilder, env As IHostingEnvironment)
+  overload: WebShop.Startup.Configure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
-- uid: TicketSystem.DatabaseRepository.Model
-  commentId: N:TicketSystem.DatabaseRepository.Model
+- uid: WebShop
+  commentId: N:WebShop
   isExternal: false
-  name: TicketSystem.DatabaseRepository.Model
-  nameWithType: TicketSystem.DatabaseRepository.Model
-  fullName: TicketSystem.DatabaseRepository.Model
+  name: WebShop
+  nameWithType: WebShop
+  fullName: WebShop
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -447,44 +424,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: false
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-  isExternal: false
-  name: TicketEventId
-  nameWithType: TicketEvent.TicketEventId
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.TicketEventId
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-  isExternal: false
-  name: EventName
-  nameWithType: TicketEvent.EventName
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventName
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
-  isExternal: false
-  name: EventHtmlDescription
-  nameWithType: TicketEvent.EventHtmlDescription
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.EventHtmlDescription
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -516,9 +455,85 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: TicketSystem.DatabaseRepository.Model.TicketEvent.ToString*
-  commentId: Overload:TicketSystem.DatabaseRepository.Model.TicketEvent.ToString
+- uid: System
+  commentId: N:System
   isExternal: false
-  name: ToString
-  nameWithType: TicketEvent.ToString
-  fullName: TicketSystem.DatabaseRepository.Model.TicketEvent.ToString
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WebShop.Startup.#ctor*
+  commentId: Overload:WebShop.Startup.#ctor
+  isExternal: false
+  name: Startup
+  nameWithType: Startup.Startup
+  fullName: WebShop.Startup.Startup
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: false
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+- uid: WebShop.Startup.Configuration*
+  commentId: Overload:WebShop.Startup.Configuration
+  isExternal: false
+  name: Configuration
+  nameWithType: Startup.Configuration
+  fullName: WebShop.Startup.Configuration
+- uid: WebShop.Startup.ConfigureServices*
+  commentId: Overload:WebShop.Startup.ConfigureServices
+  isExternal: false
+  name: ConfigureServices
+  nameWithType: Startup.ConfigureServices
+  fullName: WebShop.Startup.ConfigureServices
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: false
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+- uid: WebShop.Startup.Configure*
+  commentId: Overload:WebShop.Startup.Configure
+  isExternal: false
+  name: Configure
+  nameWithType: Startup.Configure
+  fullName: WebShop.Startup.Configure
+- uid: Microsoft.AspNetCore.Builder.IApplicationBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IApplicationBuilder
+  parent: Microsoft.AspNetCore.Builder
+  isExternal: true
+  name: IApplicationBuilder
+  nameWithType: IApplicationBuilder
+  fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+  commentId: T:Microsoft.AspNetCore.Hosting.IHostingEnvironment
+  parent: Microsoft.AspNetCore.Hosting
+  isExternal: true
+  name: IHostingEnvironment
+  nameWithType: IHostingEnvironment
+  fullName: Microsoft.AspNetCore.Hosting.IHostingEnvironment
+- uid: Microsoft.AspNetCore.Builder
+  commentId: N:Microsoft.AspNetCore.Builder
+  isExternal: false
+  name: Microsoft.AspNetCore.Builder
+  nameWithType: Microsoft.AspNetCore.Builder
+  fullName: Microsoft.AspNetCore.Builder
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: false
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting

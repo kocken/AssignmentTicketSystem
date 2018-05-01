@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: AdminWebPanel
+  commentId: N:AdminWebPanel
+  id: AdminWebPanel
+  children:
+  - AdminWebPanel.Program
+  - AdminWebPanel.Startup
+  langs:
+  - csharp
+  - vb
+  name: AdminWebPanel
+  nameWithType: AdminWebPanel
+  fullName: AdminWebPanel
+  type: Namespace
+  assemblies:
+  - AdminWebPanel
+references:
+- uid: AdminWebPanel.Program
+  commentId: T:AdminWebPanel.Program
+  isExternal: false
+  name: Program
+  nameWithType: Program
+  fullName: AdminWebPanel.Program
+- uid: AdminWebPanel.Startup
+  commentId: T:AdminWebPanel.Startup
+  isExternal: false
+  name: Startup
+  nameWithType: Startup
+  fullName: AdminWebPanel.Startup

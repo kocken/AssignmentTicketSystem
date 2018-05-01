@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: WebShop.Controllers
+  commentId: N:WebShop.Controllers
+  id: WebShop.Controllers
+  children:
+  - WebShop.Controllers.HomeController
+  langs:
+  - csharp
+  - vb
+  name: WebShop.Controllers
+  nameWithType: WebShop.Controllers
+  fullName: WebShop.Controllers
+  type: Namespace
+  assemblies:
+  - WebShop
+references:
+- uid: WebShop.Controllers.HomeController
+  commentId: T:WebShop.Controllers.HomeController
+  isExternal: false
+  name: HomeController
+  nameWithType: HomeController
+  fullName: WebShop.Controllers.HomeController

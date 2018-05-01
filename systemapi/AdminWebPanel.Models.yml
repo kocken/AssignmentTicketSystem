@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AdminWebPanel.Models
+  commentId: N:AdminWebPanel.Models
+  id: AdminWebPanel.Models
+  children:
+  - AdminWebPanel.Models.ErrorViewModel
+  langs:
+  - csharp
+  - vb
+  name: AdminWebPanel.Models
+  nameWithType: AdminWebPanel.Models
+  fullName: AdminWebPanel.Models
+  type: Namespace
+  assemblies:
+  - AdminWebPanel
+references:
+- uid: AdminWebPanel.Models.ErrorViewModel
+  commentId: T:AdminWebPanel.Models.ErrorViewModel
+  isExternal: false
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: AdminWebPanel.Models.ErrorViewModel

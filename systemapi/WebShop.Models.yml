@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: WebShop.Models
+  commentId: N:WebShop.Models
+  id: WebShop.Models
+  children:
+  - WebShop.Models.ErrorViewModel
+  - WebShop.Models.EventListModel
+  - WebShop.Models.VenueListModel
+  langs:
+  - csharp
+  - vb
+  name: WebShop.Models
+  nameWithType: WebShop.Models
+  fullName: WebShop.Models
+  type: Namespace
+  assemblies:
+  - WebShop
+references:
+- uid: WebShop.Models.ErrorViewModel
+  commentId: T:WebShop.Models.ErrorViewModel
+  isExternal: false
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: WebShop.Models.ErrorViewModel
+- uid: WebShop.Models.EventListModel
+  commentId: T:WebShop.Models.EventListModel
+  isExternal: false
+  name: EventListModel
+  nameWithType: EventListModel
+  fullName: WebShop.Models.EventListModel
+- uid: WebShop.Models.VenueListModel
+  commentId: T:WebShop.Models.VenueListModel
+  isExternal: false
+  name: VenueListModel
+  nameWithType: VenueListModel
+  fullName: WebShop.Models.VenueListModel

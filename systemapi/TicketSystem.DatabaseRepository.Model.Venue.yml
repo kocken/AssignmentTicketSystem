@@ -8,6 +8,7 @@ items:
   - TicketSystem.DatabaseRepository.Model.Venue.Address
   - TicketSystem.DatabaseRepository.Model.Venue.City
   - TicketSystem.DatabaseRepository.Model.Venue.Country
+  - TicketSystem.DatabaseRepository.Model.Venue.ToString
   - TicketSystem.DatabaseRepository.Model.Venue.VenueId
   - TicketSystem.DatabaseRepository.Model.Venue.VenueName
   langs:
@@ -18,13 +19,9 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue
   type: Class
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Venue
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 2
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 4
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
@@ -40,7 +37,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -59,13 +55,9 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueId
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueId
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 4
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 6
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
@@ -94,23 +86,29 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue.VenueName
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenueName
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 5
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 8
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
   syntax:
-    content: public string VenueName { get; set; }
+    content: >-
+      [Required]
+
+      public string VenueName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property VenueName As String
+    content.vb: >-
+      <Required>
+
+      Public Property VenueName As String
   overload: TicketSystem.DatabaseRepository.Model.Venue.VenueName*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -129,23 +127,29 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue.Address
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Address
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 6
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 11
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
   syntax:
-    content: public string Address { get; set; }
+    content: >-
+      [Required]
+
+      public string Address { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Address As String
+    content.vb: >-
+      <Required>
+
+      Public Property Address As String
   overload: TicketSystem.DatabaseRepository.Model.Venue.Address*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -164,23 +168,29 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue.City
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: City
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 7
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 14
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
   syntax:
-    content: public string City { get; set; }
+    content: >-
+      [Required]
+
+      public string City { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property City As String
+    content.vb: >-
+      <Required>
+
+      Public Property City As String
   overload: TicketSystem.DatabaseRepository.Model.Venue.City*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -199,29 +209,66 @@ items:
   fullName: TicketSystem.DatabaseRepository.Model.Venue.Country
   type: Property
   source:
-    remote:
-      path: src/DatabaseRepository/Model/Venue.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: Country
-    path: src/DatabaseRepository/Model/Venue.cs
-    startLine: 8
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 17
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository.Model
   syntax:
-    content: public string Country { get; set; }
+    content: >-
+      [Required]
+
+      public string Country { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Country As String
+    content.vb: >-
+      <Required>
+
+      Public Property Country As String
   overload: TicketSystem.DatabaseRepository.Model.Venue.Country*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
+- uid: TicketSystem.DatabaseRepository.Model.Venue.ToString
+  commentId: M:TicketSystem.DatabaseRepository.Model.Venue.ToString
+  id: ToString
+  parent: TicketSystem.DatabaseRepository.Model.Venue
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Venue.ToString()
+  fullName: TicketSystem.DatabaseRepository.Model.Venue.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\Model\Venue.cs
+    startLine: 20
+  assemblies:
+  - DatabaseRepository
+  namespace: TicketSystem.DatabaseRepository.Model
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: TicketSystem.DatabaseRepository.Model.Venue.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
 references:
 - uid: TicketSystem.DatabaseRepository.Model
   commentId: N:TicketSystem.DatabaseRepository.Model
@@ -484,37 +531,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
@@ -565,3 +581,40 @@ references:
   name: Country
   nameWithType: Venue.Country
   fullName: TicketSystem.DatabaseRepository.Model.Venue.Country
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.DatabaseRepository.Model.Venue.ToString*
+  commentId: Overload:TicketSystem.DatabaseRepository.Model.Venue.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Venue.ToString
+  fullName: TicketSystem.DatabaseRepository.Model.Venue.ToString

@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: WebShop
+  commentId: N:WebShop
+  id: WebShop
+  children:
+  - WebShop.Program
+  - WebShop.Startup
+  langs:
+  - csharp
+  - vb
+  name: WebShop
+  nameWithType: WebShop
+  fullName: WebShop
+  type: Namespace
+  assemblies:
+  - WebShop
+references:
+- uid: WebShop.Program
+  commentId: T:WebShop.Program
+  isExternal: false
+  name: Program
+  nameWithType: Program
+  fullName: WebShop.Program
+- uid: WebShop.Startup
+  commentId: T:WebShop.Startup
+  isExternal: false
+  name: Startup
+  nameWithType: Startup
+  fullName: WebShop.Startup

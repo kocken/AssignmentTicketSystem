@@ -5,9 +5,13 @@ items:
   id: ITicketDatabase
   parent: TicketSystem.DatabaseRepository
   children:
-  - TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  - TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(TicketSystem.DatabaseRepository.Model.TicketEvent)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete(System.Int32)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet
+  - TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(TicketSystem.DatabaseRepository.Model.Venue)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete(System.Int32)
   - TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
+  - TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet
   langs:
   - csharp
   - vb
@@ -16,12 +20,8 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase
   type: Interface
   source:
-    remote:
-      path: src/DatabaseRepository/ITicketDatabase.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: ITicketDatabase
-    path: src/DatabaseRepository/ITicketDatabase.cs
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
     startLine: 5
   assemblies:
   - DatabaseRepository
@@ -35,88 +35,147 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String,System.String)
-  id: EventAdd(System.String,System.String)
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(TicketSystem.DatabaseRepository.Model.TicketEvent)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(TicketSystem.DatabaseRepository.Model.TicketEvent)
+  id: EventAdd(TicketSystem.DatabaseRepository.Model.TicketEvent)
   parent: TicketSystem.DatabaseRepository.ITicketDatabase
   langs:
   - csharp
   - vb
-  name: EventAdd(String, String)
-  nameWithType: ITicketDatabase.EventAdd(String, String)
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(System.String, System.String)
+  name: EventAdd(TicketEvent)
+  nameWithType: ITicketDatabase.EventAdd(TicketEvent)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd(TicketSystem.DatabaseRepository.Model.TicketEvent)
   type: Method
   source:
-    remote:
-      path: src/DatabaseRepository/ITicketDatabase.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: EventAdd
-    path: src/DatabaseRepository/ITicketDatabase.cs
-    startLine: 13
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 12
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
-  summary: "\nAdd a new Event to the database\n"
+  summary: "\nAdds a new event to the database\n"
   example: []
   syntax:
-    content: TicketEvent EventAdd(string name, string description)
+    content: TicketEvent EventAdd(TicketEvent ticketEvent)
     parameters:
-    - id: name
-      type: System.String
-      description: Name of the event
-    - id: description
-      type: System.String
-      description: A desription of the event, html markup of the event is allowed
+    - id: ticketEvent
+      type: TicketSystem.DatabaseRepository.Model.TicketEvent
+      description: Object to add, containing name and description
     return:
       type: TicketSystem.DatabaseRepository.Model.TicketEvent
       description: An object representing the newly created TicketEvent
-    content.vb: Function EventAdd(name As String, description As String) As TicketEvent
+    content.vb: Function EventAdd(ticketEvent As TicketEvent) As TicketEvent
   overload: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd*
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
-  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String,System.String,System.String,System.String)
-  id: VenueAdd(System.String,System.String,System.String,System.String)
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete(System.Int32)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete(System.Int32)
+  id: EventDelete(System.Int32)
   parent: TicketSystem.DatabaseRepository.ITicketDatabase
   langs:
   - csharp
   - vb
-  name: VenueAdd(String, String, String, String)
-  nameWithType: ITicketDatabase.VenueAdd(String, String, String, String)
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(System.String, System.String, System.String, System.String)
+  name: EventDelete(Int32)
+  nameWithType: ITicketDatabase.EventDelete(Int32)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/DatabaseRepository/ITicketDatabase.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
-    id: VenueAdd
-    path: src/DatabaseRepository/ITicketDatabase.cs
-    startLine: 23
+    id: EventDelete
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 18
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
-  summary: "\nAdd a new venue to the database\n"
+  summary: "\nDeletes an event from the database\n"
   example: []
   syntax:
-    content: Venue VenueAdd(string name, string address, string city, string country)
+    content: void EventDelete(int id)
     parameters:
-    - id: name
-      type: System.String
-      description: Name of the venue
-    - id: address
-      type: System.String
-      description: Physical address of the venue
-    - id: city
-      type: System.String
-      description: City part of the adress
-    - id: country
-      type: System.String
-      description: Country part of the adress
+    - id: id
+      type: System.Int32
+      description: Id of the event to delete
+    content.vb: Sub EventDelete(id As Integer)
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet
+  id: EventsGet
+  parent: TicketSystem.DatabaseRepository.ITicketDatabase
+  langs:
+  - csharp
+  - vb
+  name: EventsGet()
+  nameWithType: ITicketDatabase.EventsGet()
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet()
+  type: Method
+  source:
+    id: EventsGet
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 24
+  assemblies:
+  - DatabaseRepository
+  namespace: TicketSystem.DatabaseRepository
+  summary: "\nGets all events from the database\n"
+  example: []
+  syntax:
+    content: List<TicketEvent> EventsGet()
+    return:
+      type: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.TicketEvent}
+      description: A list of all events
+    content.vb: Function EventsGet As List(Of TicketEvent)
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(TicketSystem.DatabaseRepository.Model.Venue)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(TicketSystem.DatabaseRepository.Model.Venue)
+  id: VenueAdd(TicketSystem.DatabaseRepository.Model.Venue)
+  parent: TicketSystem.DatabaseRepository.ITicketDatabase
+  langs:
+  - csharp
+  - vb
+  name: VenueAdd(Venue)
+  nameWithType: ITicketDatabase.VenueAdd(Venue)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd(TicketSystem.DatabaseRepository.Model.Venue)
+  type: Method
+  source:
+    id: VenueAdd
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 31
+  assemblies:
+  - DatabaseRepository
+  namespace: TicketSystem.DatabaseRepository
+  syntax:
+    content: Venue VenueAdd(Venue venue)
+    parameters:
+    - id: venue
+      type: TicketSystem.DatabaseRepository.Model.Venue
     return:
       type: TicketSystem.DatabaseRepository.Model.Venue
-      description: An object representing the newly created Venue
-    content.vb: Function VenueAdd(name As String, address As String, city As String, country As String) As Venue
+    content.vb: Function VenueAdd(venue As Venue) As Venue
   overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete(System.Int32)
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete(System.Int32)
+  id: VenueDelete(System.Int32)
+  parent: TicketSystem.DatabaseRepository.ITicketDatabase
+  langs:
+  - csharp
+  - vb
+  name: VenueDelete(Int32)
+  nameWithType: ITicketDatabase.VenueDelete(Int32)
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete(System.Int32)
+  type: Method
+  source:
+    id: VenueDelete
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 37
+  assemblies:
+  - DatabaseRepository
+  namespace: TicketSystem.DatabaseRepository
+  summary: "\nDeletes a venue from the database\n"
+  example: []
+  syntax:
+    content: void VenueDelete(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: Id of the venue to delete
+    content.vb: Sub VenueDelete(id As Integer)
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete*
 - uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
   commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
   id: VenuesFind(System.String)
@@ -129,29 +188,52 @@ items:
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind(System.String)
   type: Method
   source:
-    remote:
-      path: src/DatabaseRepository/ITicketDatabase.cs
-      branch: master
-      repo: https://github.com/skjohansen/AssignmentTicketSystem.git
     id: VenuesFind
-    path: src/DatabaseRepository/ITicketDatabase.cs
-    startLine: 31
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 44
   assemblies:
   - DatabaseRepository
   namespace: TicketSystem.DatabaseRepository
-  summary: "\nFind all venus matching the query\n"
+  summary: "\nFind all venues matching the query\n"
   example: []
   syntax:
     content: List<Venue> VenuesFind(string query)
     parameters:
     - id: query
       type: System.String
-      description: A text which is user i looking for in the venues
+      description: A text which the user is looking for in the venues
     return:
       type: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
-      description: A list of venus matching the query
+      description: A list of venues matching the query
     content.vb: Function VenuesFind(query As String) As List(Of Venue)
   overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet
+  commentId: M:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet
+  id: VenuesGet
+  parent: TicketSystem.DatabaseRepository.ITicketDatabase
+  langs:
+  - csharp
+  - vb
+  name: VenuesGet()
+  nameWithType: ITicketDatabase.VenuesGet()
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet()
+  type: Method
+  source:
+    id: VenuesGet
+    path: C:\Users\Plox\source\repos\AssignmentTicketSystem\src\DatabaseRepository\ITicketDatabase.cs
+    startLine: 50
+  assemblies:
+  - DatabaseRepository
+  namespace: TicketSystem.DatabaseRepository
+  summary: "\nGets all venues from the database\n"
+  example: []
+  syntax:
+    content: List<Venue> VenuesGet()
+    return:
+      type: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
+      description: A list of all venues
+    content.vb: Function VenuesGet As List(Of Venue)
+  overload: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet*
 references:
 - uid: TicketSystem.DatabaseRepository
   commentId: N:TicketSystem.DatabaseRepository
@@ -165,13 +247,6 @@ references:
   name: EventAdd
   nameWithType: ITicketDatabase.EventAdd
   fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventAdd
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: TicketSystem.DatabaseRepository.Model.TicketEvent
   commentId: T:TicketSystem.DatabaseRepository.Model.TicketEvent
   parent: TicketSystem.DatabaseRepository.Model
@@ -179,47 +254,47 @@ references:
   name: TicketEvent
   nameWithType: TicketEvent
   fullName: TicketSystem.DatabaseRepository.Model.TicketEvent
-- uid: System
-  commentId: N:System
-  isExternal: false
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: TicketSystem.DatabaseRepository.Model
   commentId: N:TicketSystem.DatabaseRepository.Model
   isExternal: false
   name: TicketSystem.DatabaseRepository.Model
   nameWithType: TicketSystem.DatabaseRepository.Model
   fullName: TicketSystem.DatabaseRepository.Model
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd*
-  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete
   isExternal: false
-  name: VenueAdd
-  nameWithType: ITicketDatabase.VenueAdd
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
-- uid: TicketSystem.DatabaseRepository.Model.Venue
-  commentId: T:TicketSystem.DatabaseRepository.Model.Venue
-  parent: TicketSystem.DatabaseRepository.Model
+  name: EventDelete
+  nameWithType: ITicketDatabase.EventDelete
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventDelete
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
   isExternal: false
-  name: Venue
-  nameWithType: Venue
-  fullName: TicketSystem.DatabaseRepository.Model.Venue
-- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
-  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet
   isExternal: false
-  name: VenuesFind
-  nameWithType: ITicketDatabase.VenuesFind
-  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
-- uid: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
-  commentId: T:System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
+  name: EventsGet
+  nameWithType: ITicketDatabase.EventsGet
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.EventsGet
+- uid: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.TicketEvent}
+  commentId: T:System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.TicketEvent}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  name: List<Venue>
-  nameWithType: List<Venue>
-  fullName: System.Collections.Generic.List<TicketSystem.DatabaseRepository.Model.Venue>
-  nameWithType.vb: List(Of Venue)
-  fullName.vb: System.Collections.Generic.List(Of TicketSystem.DatabaseRepository.Model.Venue)
-  name.vb: List(Of Venue)
+  name: List<TicketEvent>
+  nameWithType: List<TicketEvent>
+  fullName: System.Collections.Generic.List<TicketSystem.DatabaseRepository.Model.TicketEvent>
+  nameWithType.vb: List(Of TicketEvent)
+  fullName.vb: System.Collections.Generic.List(Of TicketSystem.DatabaseRepository.Model.TicketEvent)
+  name.vb: List(Of TicketEvent)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
@@ -229,10 +304,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TicketSystem.DatabaseRepository.Model.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: TicketSystem.DatabaseRepository.Model.Venue
+  - uid: TicketSystem.DatabaseRepository.Model.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: TicketSystem.DatabaseRepository.Model.TicketEvent
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -245,10 +320,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TicketSystem.DatabaseRepository.Model.Venue
-    name: Venue
-    nameWithType: Venue
-    fullName: TicketSystem.DatabaseRepository.Model.Venue
+  - uid: TicketSystem.DatabaseRepository.Model.TicketEvent
+    name: TicketEvent
+    nameWithType: TicketEvent
+    fullName: TicketSystem.DatabaseRepository.Model.TicketEvent
   - name: )
     nameWithType: )
     fullName: )
@@ -297,3 +372,83 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
+  isExternal: false
+  name: VenueAdd
+  nameWithType: ITicketDatabase.VenueAdd
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueAdd
+- uid: TicketSystem.DatabaseRepository.Model.Venue
+  commentId: T:TicketSystem.DatabaseRepository.Model.Venue
+  parent: TicketSystem.DatabaseRepository.Model
+  isExternal: false
+  name: Venue
+  nameWithType: Venue
+  fullName: TicketSystem.DatabaseRepository.Model.Venue
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete
+  isExternal: false
+  name: VenueDelete
+  nameWithType: ITicketDatabase.VenueDelete
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenueDelete
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
+  isExternal: false
+  name: VenuesFind
+  nameWithType: ITicketDatabase.VenuesFind
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesFind
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
+  commentId: T:System.Collections.Generic.List{TicketSystem.DatabaseRepository.Model.Venue}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Venue>
+  nameWithType: List<Venue>
+  fullName: System.Collections.Generic.List<TicketSystem.DatabaseRepository.Model.Venue>
+  nameWithType.vb: List(Of Venue)
+  fullName.vb: System.Collections.Generic.List(Of TicketSystem.DatabaseRepository.Model.Venue)
+  name.vb: List(Of Venue)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TicketSystem.DatabaseRepository.Model.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: TicketSystem.DatabaseRepository.Model.Venue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TicketSystem.DatabaseRepository.Model.Venue
+    name: Venue
+    nameWithType: Venue
+    fullName: TicketSystem.DatabaseRepository.Model.Venue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet*
+  commentId: Overload:TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet
+  isExternal: false
+  name: VenuesGet
+  nameWithType: ITicketDatabase.VenuesGet
+  fullName: TicketSystem.DatabaseRepository.ITicketDatabase.VenuesGet

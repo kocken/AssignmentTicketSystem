@@ -1,16 +1,11 @@
 # User stories
 
-Use this template when writing the user stories:
+"As a admin, I want to be able to add new venues to the database, so I'm not limited."
 
-"As a < type of user >, I want < some goal > so that < some reason >."
+"As a admin, I want to be able to add new events to the database, so I'm not limited."
 
-Create a new Markdown file for each userstory and create a toc.yml in the userstories folder, and add each userstory to the TOC (table of content).
+"As a ticket buyer, I want to be able to see all venues, so I can get the information online"
 
-Read more on userstories at [https://www.mountaingoatsoftware.com/agile/user-stories
-](https://www.mountaingoatsoftware.com/agile/user-stories)
+"As a ticket buyer, I want to be able to see all events, so I can get the information online"
 
-There is in the system (at least) three kind of users:
-
-* Ticket buyer, a person who wants to buy one or more tickets
-* Administrator, a person who is able to manage the ticket system, like added new events and control the sale of the ticksts
-* 3th party system, a system which uses the Web API to do operations in the system
+"As a admin, I want to have a data-check (ModelState#isValid) before adding new data to the database, so only valid data enters the database"

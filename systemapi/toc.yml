@@ -1,4 +1,21 @@
 ### YamlMime:TableOfContent
+- uid: AdminWebPanel
+  name: AdminWebPanel
+  items:
+  - uid: AdminWebPanel.Program
+    name: Program
+  - uid: AdminWebPanel.Startup
+    name: Startup
+- uid: AdminWebPanel.Controllers
+  name: AdminWebPanel.Controllers
+  items:
+  - uid: AdminWebPanel.Controllers.HomeController
+    name: HomeController
+- uid: AdminWebPanel.Models
+  name: AdminWebPanel.Models
+  items:
+  - uid: AdminWebPanel.Models.ErrorViewModel
+    name: ErrorViewModel
 - uid: TicketSystem.DatabaseRepository
   name: TicketSystem.DatabaseRepository
   items:
@@ -38,3 +55,38 @@
   items:
   - uid: TicketSystem.RestApiClient.Model.Ticket
     name: Ticket
+- uid: WebAPI
+  name: WebAPI
+  items:
+  - uid: WebAPI.Program
+    name: Program
+  - uid: WebAPI.Startup
+    name: Startup
+- uid: WebAPI.Controllers
+  name: WebAPI.Controllers
+  items:
+  - uid: WebAPI.Controllers.EventController
+    name: EventController
+  - uid: WebAPI.Controllers.VenueController
+    name: VenueController
+- uid: WebShop
+  name: WebShop
+  items:
+  - uid: WebShop.Program
+    name: Program
+  - uid: WebShop.Startup
+    name: Startup
+- uid: WebShop.Controllers
+  name: WebShop.Controllers
+  items:
+  - uid: WebShop.Controllers.HomeController
+    name: HomeController
+- uid: WebShop.Models
+  name: WebShop.Models
+  items:
+  - uid: WebShop.Models.ErrorViewModel
+    name: ErrorViewModel
+  - uid: WebShop.Models.EventListModel
+    name: EventListModel
+  - uid: WebShop.Models.VenueListModel
+    name: VenueListModel
