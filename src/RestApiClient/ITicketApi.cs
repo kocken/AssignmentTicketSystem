@@ -20,6 +20,12 @@ namespace TicketSystem.RestApiClient
         //Ticket TicketTicketIdGet(int ticketId);
 
         /// <summary>
+        /// Get all ticket-events in the system 
+        /// </summary>
+        /// <returns>Returns all events in a list</returns>
+        List<TicketEvent> EventGet();
+
+        /// <summary>
         /// Adds a ticket-event to the database
         /// </summary>
         /// <param name="ticketEvent">The TicketEvent object to add into the database</param>

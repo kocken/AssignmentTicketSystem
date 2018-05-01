@@ -11,5 +11,10 @@ namespace TicketSystem.DatabaseRepository.Model
 
         [Required]
         public string EventHtmlDescription { get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + TicketEventId + ", Name: " + EventName + ", Description: " + EventHtmlDescription;
+        }
     }
 }

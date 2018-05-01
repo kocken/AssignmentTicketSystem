@@ -37,6 +37,14 @@ namespace TicketSystem.RestApiClient
         //    return response.Data;
         //}
 
+        public List<TicketEvent> EventGet()
+        {
+            var client = new RestClient(apiLink);
+            var request = new RestRequest("event", Method.GET);
+            var response = client.Execute<List<TicketEvent>>(request);
+            return response.Data;
+        }
+
         public bool EventAdd(TicketEvent ticketEvent)
         {
             var client = new RestClient(apiLink);
@@ -46,14 +54,6 @@ namespace TicketSystem.RestApiClient
             var response = client.Execute<Venue>(request);
             return response.StatusCode == HttpStatusCode.OK;
         }
-
-        //public List<TicketEvent> EventGet()
-        //{
-        //    var client = new RestClient(apiLink);
-        //    var request = new RestRequest("event", Method.GET);
-        //    var response = client.Execute<List<TicketEvent>>(request);
-        //    return response.Data;
-        //}
 
         public List<Venue> VenueGet()
         {

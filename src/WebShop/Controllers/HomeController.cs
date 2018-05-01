@@ -26,6 +26,13 @@ namespace WebShop.Controllers
             return View(model);
         }
 
+        public IActionResult Events()
+        {
+            EventListModel model = new EventListModel();
+            model.Events = api.EventGet();
+            return View(model);
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

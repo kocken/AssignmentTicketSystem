@@ -1,0 +1,17 @@
+﻿@model WebShop.Models.EventListModel
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+@if (Model != null && Model.Events.Count > 0)
+{
+    <ul>
+        @foreach (var venue in Model.Events)
+        {
+            <li>@venue.ToString()</li>
+        }
+    </ul>
+}

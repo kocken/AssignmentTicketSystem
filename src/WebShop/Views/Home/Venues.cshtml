@@ -8,8 +8,10 @@
 
 @if (Model != null && Model.Venues.Count > 0)
 {
-    foreach (var venue in Model.Venues)
-    {
-        <p>@venue.ToString()</p>
-    }
+    <ul>
+        @foreach (var venue in Model.Venues)
+        {
+            <li>@venue.ToString()</li>
+        }
+    </ul>
 }
