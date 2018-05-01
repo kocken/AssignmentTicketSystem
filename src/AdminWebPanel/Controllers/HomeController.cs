@@ -21,7 +21,7 @@ namespace AdminWebPanel.Controllers
 
         public IActionResult VenueAdd(Venue venue)
         {
-            api.VenueAdd(venue);
+            TempData["notice"] = api.VenueAdd(venue) ? "Venue was successfully added" : "Venue failed to get added";
             return RedirectToAction("Index");
         }
 

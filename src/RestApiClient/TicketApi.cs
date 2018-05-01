@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using TicketSystem.DatabaseRepository.Model;
 using TicketSystem.RestApiClient.Model;
 
@@ -44,13 +45,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
-        public void VenueAdd(Venue venue)
+        public bool VenueAdd(Venue venue)
         {
             var client = new RestClient(apiLink);
             var request = new RestRequest("venue", Method.POST);
             var value = JsonConvert.SerializeObject(venue);
             request.AddParameter("application/json", value, ParameterType.RequestBody);
             var response = client.Execute<Venue>(request);
+            return response.StatusCode == HttpStatusCode.OK;
         }
     }
 }
