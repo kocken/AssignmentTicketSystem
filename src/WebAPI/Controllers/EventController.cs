@@ -30,11 +30,11 @@ namespace WebAPI.Controllers
 
         // POST api/event
         [HttpPost]
-        public void Post([FromBody]string name, string description)
+        public void Post([FromBody]TicketEvent ticketEvent)
         {
             if (ModelState.IsValid)
             {
-                db.EventAdd(name, description);
+                db.EventAdd(ticketEvent);
             }
         }
 

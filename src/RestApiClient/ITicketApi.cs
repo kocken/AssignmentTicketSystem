@@ -20,6 +20,13 @@ namespace TicketSystem.RestApiClient
         //Ticket TicketTicketIdGet(int ticketId);
 
         /// <summary>
+        /// Adds a ticket-event to the database
+        /// </summary>
+        /// <param name="ticketEvent">The TicketEvent object to add into the database</param>
+        /// <returns></returns>
+        bool EventAdd(TicketEvent ticketEvent);
+
+        /// <summary>
         /// Get all venues in the system 
         /// </summary>
         /// <returns>Returns all venues in a list</returns>
@@ -28,7 +35,7 @@ namespace TicketSystem.RestApiClient
         /// <summary>
         /// Adds a venue to the database
         /// </summary>
-        /// <param name="venue">The venue object to add into the database</param>
+        /// <param name="venue">The Venue object to add into the database</param>
         /// <returns></returns>
         bool VenueAdd(Venue venue);
     }

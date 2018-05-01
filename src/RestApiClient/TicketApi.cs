@@ -37,6 +37,16 @@ namespace TicketSystem.RestApiClient
         //    return response.Data;
         //}
 
+        public bool EventAdd(TicketEvent ticketEvent)
+        {
+            var client = new RestClient(apiLink);
+            var request = new RestRequest("event", Method.POST);
+            var value = JsonConvert.SerializeObject(ticketEvent);
+            request.AddParameter("application/json", value, ParameterType.RequestBody);
+            var response = client.Execute<Venue>(request);
+            return response.StatusCode == HttpStatusCode.OK;
+        }
+
         //public List<TicketEvent> EventGet()
         //{
         //    var client = new RestClient(apiLink);

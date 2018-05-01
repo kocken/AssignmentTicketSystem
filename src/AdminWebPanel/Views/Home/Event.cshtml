@@ -1,0 +1,19 @@
+﻿@model TicketSystem.DatabaseRepository.Model.TicketEvent
+
+@if (TempData["notice"] != null)
+{
+    <h4>@Html.Raw(TempData["notice"])</h4>
+}
+
+<h1>Event tools</h1>
+
+<h3>Add new event</h3>
+
+@using (Html.BeginForm("EventAdd", "Home"))
+{
+    @Html.LabelFor(m => m.EventName, "Name")<br />
+    @Html.TextBoxFor(m => m.EventName)<br />
+    @Html.LabelFor(m => m.EventHtmlDescription, "Description")<br />
+    @Html.TextBoxFor(m => m.EventHtmlDescription)<br />
+    <button type="submit">Submit</button><br /><br />
+}

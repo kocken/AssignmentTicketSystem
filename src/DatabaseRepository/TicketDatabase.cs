@@ -11,12 +11,12 @@ namespace TicketSystem.DatabaseRepository
     {
         private string connectionString = "Server=localhost\\SQLEXPRESS; Database=TicketSystem; Trusted_Connection=true";
 
-        public TicketEvent EventAdd(string name, string description)
+        public TicketEvent EventAdd(TicketEvent ticketEvent)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("insert into TicketEvents(EventName, EventHtmlDescription) values(@Name, @Description)", new { Name = name, Description = description });
+                connection.Query("insert into TicketEvents(EventName, EventHtmlDescription) values(@Name, @Description)", new { Name = ticketEvent.EventName, Description = ticketEvent.EventHtmlDescription });
                 var addedEventQuery = connection.Query<int>("SELECT IDENT_CURRENT ('TicketEvents') AS Current_Identity").First();
                 return connection.Query<TicketEvent>("SELECT * FROM TicketEvents WHERE TicketEventID=@Id", new { Id = addedEventQuery }).First();
             }

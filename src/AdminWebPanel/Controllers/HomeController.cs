@@ -27,6 +27,16 @@ namespace AdminWebPanel.Controllers
             return View();
         }
 
+        public IActionResult Venue()
+        {
+            return View();
+        }
+
+        public IActionResult Event()
+        {
+            return View();
+        }
+
         public IActionResult VenueAdd(Venue venue)
         {
             if (ModelState.IsValid)
@@ -46,7 +56,29 @@ namespace AdminWebPanel.Controllers
             {
                 TempData["notice"] = "Venue failed to get added - form contained invalid values";
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Venue");
+        }
+
+        public IActionResult EventAdd(TicketEvent ticketEvent)
+        {
+            if (ModelState.IsValid)
+            {
+                if (api.EventAdd(ticketEvent))
+                {
+                    TempData["notice"] = "Event was successfully added";
+                    _logger.LogInformation("Event {@ticketEvent} was successfully added", ticketEvent);
+                }
+                else
+                {
+                    TempData["notice"] = "Event was valid but failed to get added";
+                    _logger.LogError("Event {@ticketEvent} was valid but failed to get added", ticketEvent);
+                }
+            }
+            else
+            {
+                TempData["notice"] = "Event failed to get added - form contained invalid values";
+            }
+            return RedirectToAction("Event");
         }
 
         public IActionResult Error()

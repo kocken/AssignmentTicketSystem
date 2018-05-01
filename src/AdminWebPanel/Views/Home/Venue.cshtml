@@ -1,0 +1,23 @@
+﻿@model TicketSystem.DatabaseRepository.Model.Venue
+
+@if (TempData["notice"] != null)
+{
+    <h4>@Html.Raw(TempData["notice"])</h4>
+}
+
+<h1>Venue tools</h1>
+
+<h3>Add new venue</h3>
+
+@using (Html.BeginForm("VenueAdd", "Home"))
+{
+    @Html.LabelFor(m => m.VenueName, "Name")<br />
+    @Html.TextBoxFor(m => m.VenueName)<br />
+    @Html.LabelFor(m => m.Address, "Address")<br />
+    @Html.TextBoxFor(m => m.Address)<br />
+    @Html.LabelFor(m => m.City, "City")<br />
+    @Html.TextBoxFor(m => m.City)<br />
+    @Html.LabelFor(m => m.Country, "Country")<br />
+    @Html.TextBoxFor(m => m.Country)<br />
+    <button type="submit">Submit</button><br /><br />
+}

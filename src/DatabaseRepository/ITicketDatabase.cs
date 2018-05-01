@@ -8,10 +8,9 @@ namespace TicketSystem.DatabaseRepository
         /// <summary>
         /// Adds a new event to the database
         /// </summary>
-        /// <param name="name">Name of the event</param>
-        /// <param name="description">A desription of the event, html markup of the event is allowed</param>
+        /// <param name="ticketEvent">Object to add, containing name and description</param>
         /// <returns>An object representing the newly created TicketEvent</returns>
-        TicketEvent EventAdd(string name, string description);
+        TicketEvent EventAdd(TicketEvent ticketEvent);
 
         /// <summary>
         /// Deletes an event from the database
