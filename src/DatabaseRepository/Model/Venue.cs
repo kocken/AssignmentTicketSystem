@@ -17,5 +17,11 @@ namespace TicketSystem.DatabaseRepository.Model
 
         [Required]
         public string Country { get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + VenueId + ", Name: " + VenueName + ", Address: " + Address + ", City: " + City + ", Country: " + Country;
+        }
     }
+
 }

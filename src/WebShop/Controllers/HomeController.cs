@@ -21,8 +21,9 @@ namespace WebShop.Controllers
 
         public IActionResult Venues()
         {
-            List<Venue> venues = api.VenueGet();
-            return View();
+            VenueListModel model = new VenueListModel();
+            model.Venues = api.VenueGet();
+            return View(model);
         }
 
         public IActionResult Error()

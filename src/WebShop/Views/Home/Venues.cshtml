@@ -1,5 +1,15 @@
-﻿@{
+﻿@model WebShop.Models.VenueListModel
+
+@{
     ViewData["Title"] = "Venues";
 }
 
 <h3>@ViewData["Title"]</h3>
+
+@if (Model != null && Model.Venues.Count > 0)
+{
+    foreach (var venue in Model.Venues)
+    {
+        <p>@venue.ToString()</p>
+    }
+}
