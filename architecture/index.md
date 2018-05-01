@@ -1,6 +1,8 @@
 # Ticket system architecture
 
-The system revolves around a SQL database, one ASP.NET Core REST API project and two ASP.NET Core MVC projects, one of them being the backoffice/admin panel and the other one being the client webshop, whereas all these components communicate with each other through the REST API.
+The system revolves around a SQL database, and multiple ASP.NET Core projects, to stimulate a simple ticket system base. 
+There's one REST API project, another REST API client project, a database-repository project containing models & database query methods and lastly two MVC projects. One of the MVC projects being the backoffice/admin panel and the other one being the client webshop. 
+All these components communicate with each other through the REST API.
 
 # Context diagram
 
