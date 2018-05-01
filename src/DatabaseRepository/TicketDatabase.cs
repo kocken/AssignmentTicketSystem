@@ -9,9 +9,10 @@ namespace TicketSystem.DatabaseRepository
 {
     public class TicketDatabase : ITicketDatabase
     {
+        private string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+
         public TicketEvent EventAdd(string name, string description)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -21,9 +22,26 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        public void EventDelete(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query<TicketEvent>("DELETE FROM TicketEvents WHERE TicketEventID=@Id", new { Id = id });
+            }
+        }
+
+        public List<TicketEvent> EventsGet()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                return connection.Query<TicketEvent>("SELECT * FROM TicketEvents").ToList();
+            }
+        }
+
         public Venue VenueAdd(string name, string address, string city, string country)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -35,12 +53,21 @@ namespace TicketSystem.DatabaseRepository
 
         public List<Venue> VenuesFind(string query)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueName like '%"+query+ "%' OR Address like '%" + query + "%' OR City like '%" + query + "%' OR Country like '%" + query + "%'").ToList();
             }
         }
+        
+        public List<Venue> VenuesGet()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                return connection.Query<Venue>("SELECT * FROM Venues").ToList();
+            }
+        }
+
     }
 }
