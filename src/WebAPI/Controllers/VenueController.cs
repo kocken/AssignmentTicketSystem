@@ -32,7 +32,10 @@ namespace WebAPI.Controllers
         [HttpPost]
         public void Post([FromBody]Venue venue)
         {
-            db.VenueAdd(venue);
+            if (ModelState.IsValid)
+            {
+                db.VenueAdd(venue);
+            }
         }
 
         // PUT api/values/5

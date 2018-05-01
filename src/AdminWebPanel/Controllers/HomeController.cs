@@ -21,7 +21,14 @@ namespace AdminWebPanel.Controllers
 
         public IActionResult VenueAdd(Venue venue)
         {
-            TempData["notice"] = api.VenueAdd(venue) ? "Venue was successfully added" : "Venue failed to get added";
+            if (ModelState.IsValid)
+            {
+                TempData["notice"] = ModelState.IsValid && api.VenueAdd(venue) ? "Venue was successfully added" : "Venue failed to get added";
+            }
+            else
+            {
+                TempData["notice"] = "Venue failed to get added - form contained invalid values";
+            }
             return RedirectToAction("Index");
         }
 
