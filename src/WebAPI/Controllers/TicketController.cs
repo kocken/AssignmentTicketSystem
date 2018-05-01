@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TicketSystem.DatabaseRepository;
 
 namespace WebAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class TicketController : Controller
     {
+        TicketDatabase db = new TicketDatabase();
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
