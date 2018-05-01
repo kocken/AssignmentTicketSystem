@@ -51,6 +51,15 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
+        public void VenueDelete(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                connection.Query<TicketEvent>("DELETE FROM Venues WHERE VenueID=@Id", new { Id = id });
+            }
+        }
+
         public List<Venue> VenuesFind(string query)
         {
             using (var connection = new SqlConnection(connectionString))
