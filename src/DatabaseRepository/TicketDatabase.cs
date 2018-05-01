@@ -40,12 +40,12 @@ namespace TicketSystem.DatabaseRepository
             }
         }
 
-        public Venue VenueAdd(string name, string address, string city, string country)
+        public Venue VenueAdd(Venue venue)
         {
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                connection.Query("insert into Venues([VenueName],[Address],[City],[Country]) values(@Name,@Address, @City, @Country)", new { Name = name, Address= address, City = city, Country = country });
+                connection.Query("insert into Venues([VenueName],[Address],[City],[Country]) values(@Name,@Address, @City, @Country)", new { Name = venue.VenueName, Address = venue.Address, City = venue.City, Country = venue.Country });
                 var addedVenueQuery = connection.Query<int>("SELECT IDENT_CURRENT ('Venues') AS Current_Identity").First();
                 return connection.Query<Venue>("SELECT * FROM Venues WHERE VenueID=@Id", new { Id = addedVenueQuery }).First();
             }

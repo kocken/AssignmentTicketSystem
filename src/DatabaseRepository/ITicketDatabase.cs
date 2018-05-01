@@ -16,12 +16,9 @@ namespace TicketSystem.DatabaseRepository
         /// <summary>
         /// Add a new venue to the database
         /// </summary>
-        /// <param name="name">Name of the venue</param>
-        /// <param name="address">Physical address of the venue</param>
-        /// <param name="city">City part of the adress</param>
-        /// <param name="country">Country part of the adress</param>
+        /// <param name="venue">The venue object, with VenueName, Address, City & Country values</param>
         /// <returns>An object representing the newly created Venue</returns>
-        Venue VenueAdd(string name, string address, string city, string country);
+        Venue VenueAdd(Venue venue);
 
 
         /// <summary>

@@ -1,6 +1,8 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
+using TicketSystem.DatabaseRepository.Model;
 using TicketSystem.RestApiClient.Model;
 
 namespace TicketSystem.RestApiClient
@@ -9,9 +11,11 @@ namespace TicketSystem.RestApiClient
     {
         // Implemented using RestSharp: http://restsharp.org/
 
+        private string apiLink = "http://localhost:59914/api/";
+
         public List<Ticket> TicketGet()
         {
-            var client = new RestClient("http://localhost:18001/");
+            var client = new RestClient(apiLink);
             var request = new RestRequest("ticket", Method.GET);
             var response = client.Execute<List<Ticket>>(request);
             return response.Data;
@@ -19,7 +23,7 @@ namespace TicketSystem.RestApiClient
 
         public Ticket TicketTicketIdGet(int ticketId)
         {
-            var client = new RestClient("http://localhost:18001/");
+            var client = new RestClient(apiLink);
             var request = new RestRequest("ticket/{id}", Method.GET);
             request.AddUrlSegment("id", ticketId);
             var response = client.Execute<Ticket>(request);
@@ -30,6 +34,23 @@ namespace TicketSystem.RestApiClient
             }
 
             return response.Data;
+        }
+
+        public List<TicketEvent> EventGet()
+        {
+            var client = new RestClient(apiLink);
+            var request = new RestRequest("event", Method.GET);
+            var response = client.Execute<List<TicketEvent>>(request);
+            return response.Data;
+        }
+
+        public void VenueAdd(Venue venue)
+        {
+            var client = new RestClient(apiLink);
+            var request = new RestRequest("venue", Method.POST);
+            var value = JsonConvert.SerializeObject(venue);
+            request.AddParameter("application/json", value, ParameterType.RequestBody);
+            var response = client.Execute<Venue>(request);
         }
     }
 }

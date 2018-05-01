@@ -30,9 +30,9 @@ namespace WebAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string name, string address, string city, string country)
+        public void Post([FromBody]Venue venue)
         {
-            db.VenueAdd(name, address, city, country);
+            db.VenueAdd(venue);
         }
 
         // PUT api/values/5
