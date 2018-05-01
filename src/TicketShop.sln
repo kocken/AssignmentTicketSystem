@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApiClient", "RestApiCli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop", "WebShop\WebShop.csproj", "{C30ABBFE-9721-4340-A397-92321A21900F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseRepository", "DatabaseRepository\DatabaseRepository.csproj", "{57A9D3DB-BB5B-4FE8-9990-EBD8AFC2E8CC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{C30ABBFE-9721-4340-A397-92321A21900F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C30ABBFE-9721-4340-A397-92321A21900F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C30ABBFE-9721-4340-A397-92321A21900F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57A9D3DB-BB5B-4FE8-9990-EBD8AFC2E8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57A9D3DB-BB5B-4FE8-9990-EBD8AFC2E8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57A9D3DB-BB5B-4FE8-9990-EBD8AFC2E8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57A9D3DB-BB5B-4FE8-9990-EBD8AFC2E8CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
