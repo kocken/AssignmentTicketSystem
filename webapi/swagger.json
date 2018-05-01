@@ -13,7 +13,6 @@
     "/venue": {
       "get": {
         "summary": "Grabs all venues",
-		"description": "Grabs all venues",
 		"operationId": "venue",
 		"produces": [
           "application/json"
@@ -28,7 +27,6 @@
    "/venue/{venue}": {
       "post": {
         "summary": "Adds a venue to the system",
-        "description": "Adds a venue to the system",
 	    "operationId": "venue",
         "parameters": [
           {
@@ -49,7 +47,6 @@
    "/venue/{id}": {
       "delete": {
         "summary": "Deletes a venue from the system",
-        "description": "Deletes a venue from the system",
 	    "operationId": "id",
         "parameters": [
           {
@@ -70,7 +67,6 @@
    "/event": {
       "get": {
         "summary": "Grabs all ticket events",
-		"description": "Grabs all ticket events",
 		"operationId": "event",
 		"produces": [
           "application/json"
@@ -85,7 +81,6 @@
    "/event/{event}": {
       "post": {
         "summary": "Adds a event to the system",
-        "description": "Adds a event to the system",
 	    "operationId": "event",
         "parameters": [
           {
@@ -106,7 +101,6 @@
    "/event/{id}": {
       "delete": {
         "summary": "Deletes a event from the system",
-        "description": "Deletes a event from the system",
 	    "operationId": "id",
         "parameters": [
           {
