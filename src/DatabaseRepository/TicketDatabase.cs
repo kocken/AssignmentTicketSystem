@@ -9,7 +9,7 @@ namespace TicketSystem.DatabaseRepository
 {
     public class TicketDatabase : ITicketDatabase
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["TicketSystem"].ConnectionString;
+        private string connectionString = "Server=localhost\\SQLEXPRESS; Database=TicketSystem; Trusted_Connection=true";
 
         public TicketEvent EventAdd(string name, string description)
         {

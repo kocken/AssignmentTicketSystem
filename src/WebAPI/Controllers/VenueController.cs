@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystem.DatabaseRepository;
+using TicketSystem.DatabaseRepository.Model;
 
 namespace WebAPI.Controllers
 {
@@ -15,9 +16,9 @@ namespace WebAPI.Controllers
 
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Venue> Get()
         {
-            return new string[] { "value1", "value2" };
+            return db.VenuesGet();
         }
 
         // GET api/values/5
