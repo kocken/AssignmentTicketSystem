@@ -45,6 +45,14 @@ namespace TicketSystem.RestApiClient
             return response.Data;
         }
 
+        public List<Venue> VenueGet()
+        {
+            var client = new RestClient(apiLink);
+            var request = new RestRequest("venue", Method.GET);
+            var response = client.Execute<List<Venue>>(request);
+            return response.Data;
+        }
+
         public bool VenueAdd(Venue venue)
         {
             var client = new RestClient(apiLink);

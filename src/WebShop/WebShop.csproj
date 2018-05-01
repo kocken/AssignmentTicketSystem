@@ -12,4 +12,15 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseRepository\DatabaseRepository.csproj" />
+    <ProjectReference Include="..\RestApiClient\RestApiClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DatabaseRepository">
+      <HintPath>..\DatabaseRepository\bin\Debug\netstandard2.0\DatabaseRepository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
